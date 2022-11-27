@@ -13,6 +13,8 @@ env/
 venv/
 .venv/
 
+**/dj_venv
+
 ### Project specific ###
 settings_local.py
 
