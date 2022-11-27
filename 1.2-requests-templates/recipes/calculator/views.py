@@ -28,3 +28,20 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+def calculator(request, name):
+    servings = int(request.GET.get("servings",1))
+    recipe = {}
+    try:
+        recipe_old = DATA[name]
+        for ingredient, value in recipe_old.items():
+            recipe[ingredient] = value*servings
+    except:
+        recipe = None
+    context = {
+        'recipe': recipe,
+        'name': name
+    }
+    templates_name = 'calculator/index.html'
+    return render(request=request, template_name=templates_name, context=context)
+
