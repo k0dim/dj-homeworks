@@ -16,12 +16,12 @@
             </div>
             {% endfor %}
         </div>
-
-        {% if page.has_previous %}
-            <a href="{{ previous_page_number }}">< {{ pub_date_previous }}</a>
-        {% endif %}
-        {% if page.has_next %}
-            <a href="{{ next_page_number }}">{{ pub_date_next }} ></a>
-        {% endif %}
+            {% if page.has_previous %}
+                <a href="{{ pub_date_previous }}">< {{ pub_date_previous }}</a>
+            {% endif %}
+                <!-- <a href="">{{ pub_date_next }} {{ pub_date_previous }}</a> -->
+            {% if page.has_next %}
+                <a href="{{ pub_date_next }}">{{ pub_date_next }} ></a>
+            {% endif %}
     </div>
 {% endblock %}
