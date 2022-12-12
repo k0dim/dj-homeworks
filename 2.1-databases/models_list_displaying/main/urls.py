@@ -19,7 +19,7 @@ from django.urls import path
 from books.views import books_view, pagination_book
 
 urlpatterns = [
-    # path('', books_view, name='books'),
+    path('', books_view, name='books'),
     path('admin/', admin.site.urls),
     path('books/', books_view),
     path('books/<pub_date>/', pagination_book)
