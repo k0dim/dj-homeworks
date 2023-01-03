@@ -1,12 +1,11 @@
 from django.contrib import admin
+from django.forms import BaseInlineFormSet
 
 from .models import Student, Teacher
-
 
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     pass
-
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
