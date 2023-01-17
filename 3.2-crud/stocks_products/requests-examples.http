@@ -41,6 +41,12 @@ Content-Type: application/json
 
 ###
 
+# Пагинация
+GET {{baseUrl}}/products/?page=1
+Content-Type: application/json
+
+###
+
 # создание склада
 POST {{baseUrl}}/stocks/
 Content-Type: application/json
