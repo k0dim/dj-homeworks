@@ -39,7 +39,9 @@ class AdvertisementSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         """Метод для валидации. Вызывается при создании и обновлении."""
-
+        if self._context['request']._stream.environ['REQUEST_METHOD'] != 'PATCH':
+            if Advertisement.objects.filter(status='OPEN', creator=self.context["request"].user).count() >=11:
+                raise ValueError()
         # TODO: добавьте требуемую валидацию
 
         return data
