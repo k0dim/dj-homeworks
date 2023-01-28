@@ -10,5 +10,5 @@ class AdvertisementFilter(filters.FilterSet):
     created_at = DateFromToRangeFilter()
     class Meta:
         model = Advertisement 
-        fields = ['creator', 'created_at']
+        fields = ['creator', 'status', 'created_at']
 
