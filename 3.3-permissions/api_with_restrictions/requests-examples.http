@@ -1,4 +1,5 @@
 # примеры API-запросов
+# 6b578c896a82f3171ff2c34418404b3665d78436
 
 @baseUrl = http://localhost:8000/api
 
@@ -11,20 +12,19 @@ Content-Type: application/json
 # создание объявления
 POST {{baseUrl}}/advertisements/
 Content-Type: application/json
-Authorization: Token 6b578c896a82f3171ff2c34418404b3665d78436
+Authorization: Token 9d0819a96bb8f45c3002a29baa15494c438bd251
 
 {
   "title": "Шкаф HOFF #3",
-  "description": "Срочно",
-  "status": "OPEN"
+  "description": "Срочно"
 }
 
 ###
 
 # попытка поменять объявление
-PATCH {{baseUrl}}/advertisements/26/
+PATCH {{baseUrl}}/advertisements/43/
 Content-Type: application/json
-Authorization: Token 9d0819a96bb8f45c3002a29baa15494c438bd251
+# Authorization: Token 6b578c896a82f3171ff2c34418404b3665d78436
 
 {
   "status": "CLOSED"
@@ -45,7 +45,7 @@ Content-Type: application/json
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_after=2024-10-01
+GET {{baseUrl}}/advertisements/?created_at_before=2025-10-01
 Content-Type: application/json
 
 ###
